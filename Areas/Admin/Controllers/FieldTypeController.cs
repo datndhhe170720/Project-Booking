@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_PRN221_BookingFields.Data;
 using Project_PRN221_BookingFields.Models;
+using Project_PRN221_BookingFields.Repository;
 
 namespace Project_PRN221_BookingFields.Areas.Admin.Controllers
 {
@@ -8,6 +9,7 @@ namespace Project_PRN221_BookingFields.Areas.Admin.Controllers
     public class FieldTypeController : Controller
     {
         private ApplicationDbContext _context;
+        //private IUnitOfWork _unitOfWork;
 
         public FieldTypeController(ApplicationDbContext context)
         {
@@ -15,6 +17,7 @@ namespace Project_PRN221_BookingFields.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            //_unitOfWork.GenericRepository<FieldType>().GetAll();
             var fieldsTypeList = _context.FieldTypes.ToList();
             List<FieldTypeViewModel> vm = new List<FieldTypeViewModel>();
             foreach (var item in fieldsTypeList)

@@ -11,14 +11,35 @@ namespace Project_PRN221_BookingFields.Repository
             _context = context;
         }
 
+        private bool dispose = false;
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!this.dispose)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.dispose = true;
+        }
+
         public IGenericRepository<T> GenericRepository<T>() where T : class
         {
-            throw new NotImplementedException();
+            IGenericRepository<T> repo = new GenericRepository<T>(_context);
+            return repo;
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }
