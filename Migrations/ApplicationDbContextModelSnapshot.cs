@@ -226,6 +226,37 @@ namespace Project_PRN221_BookingFields.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Project_PRN221_BookingFields.Data.Field", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("FieldNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FieldPicture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FieldTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FieldTypeId");
+
+                    b.ToTable("Field");
+                });
+
             modelBuilder.Entity("Project_PRN221_BookingFields.Data.FieldType", b =>
                 {
                     b.Property<int>("Id")
@@ -314,6 +345,17 @@ namespace Project_PRN221_BookingFields.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Project_PRN221_BookingFields.Data.Field", b =>
+                {
+                    b.HasOne("Project_PRN221_BookingFields.Data.FieldType", "FieldType")
+                        .WithMany()
+                        .HasForeignKey("FieldTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FieldType");
                 });
 #pragma warning restore 612, 618
         }

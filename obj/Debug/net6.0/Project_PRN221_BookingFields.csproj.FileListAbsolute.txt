@@ -284,3 +284,5 @@ C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\o
 C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\obj\Debug\net6.0\Project_PRN221_BookingFields.genruntimeconfig.cache
 C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\obj\Debug\net6.0\ref\Project_PRN221_BookingFields.dll
 C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\obj\Debug\net6.0\Project_PRN221_BookingFields.sourcelink.json
+C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\bin\Debug\net6.0\cloudscribe.Pagination.Models.dll
+C:\Users\admin\Desktop\PRN221\Demo\Project_PRN221\Project_PRN221_BookingFields\bin\Debug\net6.0\cloudscribe.Web.Pagination.dll

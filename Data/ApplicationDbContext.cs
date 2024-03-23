@@ -11,5 +11,6 @@ namespace Project_PRN221_BookingFields.Data
         }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<FieldType> FieldTypes { get; set; }
+        public DbSet<Field> Field { get; set; }
     }
 }

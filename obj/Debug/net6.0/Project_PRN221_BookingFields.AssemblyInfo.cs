@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project_PRN221_BookingFields")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+023a7c556a2b716e3f7baa7db9e81cf8d19ad600")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdce038186884e38761281e4ac19a0a0e6e72a42")]
 [assembly: System.Reflection.AssemblyProductAttribute("Project_PRN221_BookingFields")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Project_PRN221_BookingFields")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,62 @@
+﻿@using Project_PRN221_BookingFields.Utility
+@using Project_PRN221_BookingFields.Data
+@model Project_PRN221_BookingFields.Models.FieldViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Field</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FieldNumber" class="control-label"></label>
+                <input asp-for="FieldNumber" class="form-control" />
+                <span asp-validation-for="FieldNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FieldPrice" class="control-label"></label>
+                <input asp-for="FieldPrice" class="form-control" />
+                <span asp-validation-for="FieldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Field Type Availability</label>
+                <select asp-for="FieldTypeId" asp-items="@ViewBag.FieldType" class="form-control">
+                    <option value="-1">Select Field Type</option>
+                </select>
+                <span asp-validation-for="FieldTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Field Availability</label>
+                <select asp-for="Status" asp-items="@Html.GetEnumSelectList<FieldBook>()" class="form-control">
+                    <option value="-1">Select Status</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FieldPictureFile" class="control-label"></label>
+                <input asp-for="FieldPictureFile" class="form-control" />
+                <span asp-validation-for="FieldPictureFile" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

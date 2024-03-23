@@ -1,0 +1,18 @@
+﻿@using Project_PRN221_BookingFields.Utility
+@using Project_PRN221_BookingFields.Models
+@model PagedResult<Project_PRN221_BookingFields.Models.FieldViewModel>
+
+    <main>
+        <div class="container-fluid bg-transparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2  row-cols-sm-2  row-cols-lg-4 g-3">
+            @foreach (var item in Model.Data) {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="~/Images/@item.FieldPicture" class="card-img-top" alt="..." />
+
+                    </div>
+                </div>
+            }
+        </div>
+        </div>
+    </main>
